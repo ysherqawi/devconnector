@@ -1,0 +1,4 @@
+{
+  "db": "mongodb://localhost/dev-connector",
+  "port": 5000
+}
