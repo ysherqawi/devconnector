@@ -9,7 +9,7 @@ require('./startup/db')();
 // Define Routes
 require('./startup/routes')(app);
 
-const PORT = process.env.PORT || config.port;
+const PORT = process.env.PORT || config.get('port');
 
 app.listen(5000, () => {
   console.log(`Server started on port ${PORT}`);
