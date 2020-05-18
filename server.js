@@ -3,12 +3,11 @@ const config = require('config');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
-//Connect Database
+// Connect Database
 require('./startup/db')();
+
+// Define Routes
+require('./startup/routes')(app);
 
 const PORT = process.env.PORT || config.port;
 
