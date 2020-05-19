@@ -1,5 +1,7 @@
 {
   "db": "mongodb://localhost/dev-connector",
   "port": 5000,
-  "jwtSecret": "mySecretToken"
+  "jwtSecret": "mySecretToken",
+  "githubClientId": "fb912ed2207b406237ee",
+  "githubClientSecret": "0de983d0ff74be278e35eb892296923e4321ceef"
 }
