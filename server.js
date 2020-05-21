@@ -6,6 +6,9 @@ const app = express();
 // Connect Database
 require('./startup/db')();
 
+// Security Middlewares
+require('./startup/security')(app);
+
 // Define Routes
 require('./startup/routes')(app);
 
