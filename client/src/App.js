@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
@@ -7,22 +7,34 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 import './App.css';
 
-const App = () => (
-  <Provider store={store}>
-    <Fragment>
-      <Navbar />
-      <Route path='/' exact component={Landing} />
-      <section className='container'>
-        <Alert />
-        <Switch>
-          <Route exact path='/register' component={Register} />
-          <Route exact path='/login' component={Login} />
-        </Switch>
-      </section>
-    </Fragment>
-  </Provider>
-);
+if (localStorage.token) setAuthToken(localStorage.token);
+
+const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+
+    //eslint-disable-next-line
+  }, []);
+
+  return (
+    <Provider store={store}>
+      <Fragment>
+        <Navbar />
+        <Route path='/' exact component={Landing} />
+        <section className='container'>
+          <Alert />
+          <Switch>
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
+          </Switch>
+        </section>
+      </Fragment>
+    </Provider>
+  );
+};
 
 export default App;
