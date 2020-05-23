@@ -3,9 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from './../../actions/profile';
-import { setAlert } from './../../actions/alert';
 
-const AddEducation = ({ addEducation, setAlert, history }) => {
+const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
     school: '',
     degree: '',
@@ -32,7 +31,6 @@ const AddEducation = ({ addEducation, setAlert, history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (to < from) return setAlert('To Date can not be before From Data');
     addEducation(formData, history);
   };
 
@@ -124,9 +122,6 @@ const AddEducation = ({ addEducation, setAlert, history }) => {
 
 AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
-  setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addEducation, setAlert })(
-  withRouter(AddEducation)
-);
+export default connect(null, { addEducation })(withRouter(AddEducation));

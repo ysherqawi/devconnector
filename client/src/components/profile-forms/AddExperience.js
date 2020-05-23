@@ -3,9 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addExperience } from './../../actions/profile';
-import { setAlert } from './../../actions/alert';
 
-const AddExperience = ({ addExperience, setAlert, history }) => {
+const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
     title: '',
     company: '',
@@ -24,7 +23,6 @@ const AddExperience = ({ addExperience, setAlert, history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (to < from) return setAlert('To Date can not be before From Data');
     addExperience(formData, history);
   };
   return (
@@ -114,9 +112,6 @@ const AddExperience = ({ addExperience, setAlert, history }) => {
 
 AddExperience.propTypes = {
   addExperience: PropTypes.func.isRequired,
-  setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addExperience, setAlert })(
-  withRouter(AddExperience)
-);
+export default connect(null, { addExperience })(withRouter(AddExperience));
