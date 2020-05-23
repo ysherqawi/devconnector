@@ -15,8 +15,6 @@ const AddExperience = ({ addExperience, history }) => {
     description: '',
   });
 
-  const [toDateDisable, toggleDisable] = useState(false);
-
   const { title, company, location, from, current, to, description } = formData;
 
   const onChange = (e) => {
@@ -74,10 +72,10 @@ const AddExperience = ({ addExperience, history }) => {
             <input
               type='checkbox'
               name='current'
+              checked={current}
               value={current}
               onChange={(e) => {
                 setFormData({ ...formData, current: !current });
-                toggleDisable(!toDateDisable);
               }}
             />{' '}
             Current Job
@@ -90,7 +88,7 @@ const AddExperience = ({ addExperience, history }) => {
             name='to'
             value={to}
             onChange={onChange}
-            disabled={toDateDisable ? 'disabled' : ''}
+            disabled={current}
           />
         </div>
         <div className='form-group'>

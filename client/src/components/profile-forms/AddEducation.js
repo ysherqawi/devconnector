@@ -15,8 +15,6 @@ const AddEducation = ({ addEducation, history }) => {
     description: '',
   });
 
-  const [toDateDisable, toggleDisable] = useState(false);
-
   const {
     school,
     degree,
@@ -84,10 +82,10 @@ const AddEducation = ({ addEducation, history }) => {
             <input
               type='checkbox'
               name='current'
+              checked={current}
               value={current}
               onChange={(e) => {
                 setFormData({ ...formData, current: !current });
-                toggleDisable(!toDateDisable);
               }}
             />{' '}
             Current School or Bootcamp
@@ -100,7 +98,7 @@ const AddEducation = ({ addEducation, history }) => {
             name='to'
             value={to}
             onChange={onChange}
-            disabled={toDateDisable ? 'disabled' : ''}
+            disabled={current}
           />
         </div>
         <div className='form-group'>
