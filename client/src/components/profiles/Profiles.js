@@ -13,7 +13,7 @@ const Profiles = ({ profile: { profiles, loading }, getProfiles }) => {
 
   return (
     <Fragment>
-      {loading ? (
+      {profiles.length === 0 || loading ? (
         <Spinner />
       ) : (
         <Fragment>
