@@ -31,7 +31,6 @@ const EditProfile = ({
     getCurrentProfile();
 
     setFormData(populateProfile(loading, profile));
-
     //eslint-disable-next-line
   }, []);
 
