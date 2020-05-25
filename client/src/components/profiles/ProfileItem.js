@@ -11,12 +11,21 @@ const ProfileItem = ({
     skills,
   },
 }) => {
+  const firstName =
+    name.trim().split(' ')[0][0].toUpperCase() +
+    name.trim().split(' ')[0].slice(1);
+  const lastName = name.trim().split(' ')[1]
+    ? name.trim().split(' ')[1][0].toUpperCase() +
+      name.trim().split(' ')[1].slice(1)
+    : '';
   return (
     <Fragment>
       <div className='profile bg-light'>
         <img className='round-img' src={avatar} alt='' />
         <div>
-          <h2>{name}</h2>
+          <h2>
+            {firstName} {lastName}
+          </h2>
           <p>
             {status} {company && <span>at {company}</span>}
           </p>
