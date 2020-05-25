@@ -4,8 +4,8 @@ import Moment from 'react-moment';
 
 const ProfileEducation = ({ education }) => {
   return (
-    <div class='profile-edu bg-white p-2'>
-      <h2 class='text-primary'>Education</h2>
+    <div className='profile-edu bg-white p-2'>
+      <h2 className='text-primary'>Education</h2>
       {education.length > 0 ? (
         education.map((edu) => (
           <div key={edu._id}>

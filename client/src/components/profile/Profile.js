@@ -8,6 +8,7 @@ import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
 import { connect } from 'react-redux';
 import { getProfileById } from './../../actions/profile';
+import ProfileGithub from './ProfileGithub';
 
 const Profile = ({
   auth,
@@ -41,6 +42,9 @@ const Profile = ({
             <ProfileAbout profile={profile} />
             <ProfileExperience experience={profile.experience} />
             <ProfileEducation education={profile.education} />
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </Fragment>
       )}
