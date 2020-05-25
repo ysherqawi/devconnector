@@ -152,10 +152,10 @@ router.put(
       from,
       to,
       current,
-      descrition,
+      description,
     } = req.body;
 
-    const newExp = { title, company, location, from, to, current, descrition };
+    const newExp = { title, company, location, from, to, current, description };
 
     try {
       const profile = await Profile.findOne({ user: req.user.id });
@@ -215,7 +215,7 @@ router.put(
       from,
       to,
       current,
-      descrition,
+      description,
     } = req.body;
 
     const newEdu = {
@@ -225,7 +225,7 @@ router.put(
       from,
       to,
       current,
-      descrition,
+      description,
     };
 
     try {

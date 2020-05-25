@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Spinner from './../layout/Spinner';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
+import ProfileExperience from './ProfileExperience';
+import ProfileEducation from './ProfileEducation';
 import { connect } from 'react-redux';
 import { getProfileById } from './../../actions/profile';
 
@@ -37,6 +39,8 @@ const Profile = ({
           <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
+            <ProfileExperience experience={profile.experience} />
+            <ProfileEducation education={profile.education} />
           </div>
         </Fragment>
       )}
