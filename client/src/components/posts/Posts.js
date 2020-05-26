@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Spinner from '../layout/Spinner';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
+import PostItem from './PostItem';
 
 const Posts = ({ post: { posts, loading }, getPosts }) => {
   useEffect(() => {
@@ -10,8 +11,22 @@ const Posts = ({ post: { posts, loading }, getPosts }) => {
     //eslint-disable-next-line
   }, []);
 
-  return (
-    <Fragment>{loading || posts.lenght === 0 ? <Spinner /> : ''}</Fragment>
+  return loading || posts.lenght === 0 ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 class='large text-primary'>Posts</h1>
+      <p class='lead'>
+        <i class='fas fa-user'></i> Welcome to the community!
+      </p>
+
+      {/*PostForm*/}
+      <div className='posts'>
+        {posts.map((post) => (
+          <PostItem key={post._id} post={post} />
+        ))}
+      </div>
+    </Fragment>
   );
 };
 
