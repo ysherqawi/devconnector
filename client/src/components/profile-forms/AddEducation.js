@@ -104,6 +104,8 @@ const AddEducation = ({ addEducation, history }) => {
           <textarea
             name='description'
             value={description}
+            cols='30'
+            rows='5'
             onChange={onChange}
             placeholder='Program Description'
           ></textarea>

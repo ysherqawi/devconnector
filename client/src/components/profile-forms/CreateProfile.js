@@ -137,6 +137,8 @@ const CreateProfile = ({ createProfile, history }) => {
             placeholder='A short bio of yourself'
             name='bio'
             value={bio}
+            cols='30'
+            rows='5'
             onChange={onChange}
           ></textarea>
           <small className='form-text'>Tell us a little about yourself</small>
