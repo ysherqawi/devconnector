@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Spinner from './../layout/Spinner';
 import PostItem from '../posts/PostItem';
+import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
 import { getPost } from './../../actions/post';
 
@@ -20,6 +21,7 @@ const Post = ({ post: { post, loading }, getPost, match }) => {
         Back to posts
       </Link>
       <PostItem post={post} showActions={false} />
+      <CommentForm postId={post._id} />
     </Fragment>
   );
 };
