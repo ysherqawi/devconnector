@@ -39,7 +39,7 @@ const ProfileTop = ({
             <i className='fas fa-globe fa-2x'></i>
           </a>
         )}
-        {social.twitter && (
+        {social && social.twitter && (
           <a
             href={`http://${social.twitter}`}
             target='_blank'
@@ -48,7 +48,7 @@ const ProfileTop = ({
             <i className='fab fa-twitter fa-2x'></i>
           </a>
         )}
-        {social.facebook && (
+        {social && social.facebook && (
           <a
             href={`http://${social.facebook}`}
             target='_blank'
@@ -57,7 +57,7 @@ const ProfileTop = ({
             <i className='fab fa-facebook fa-2x'></i>
           </a>
         )}
-        {social.linkedin && (
+        {social && social.linkedin && (
           <a
             href={`http://${social.linkedin}`}
             target='_blank'
@@ -66,7 +66,7 @@ const ProfileTop = ({
             <i className='fab fa-linkedin fa-2x'></i>
           </a>
         )}
-        {social.youtube && (
+        {social && social.youtube && (
           <a
             href={`http://${social.youtube}`}
             target='_blank'
@@ -75,7 +75,7 @@ const ProfileTop = ({
             <i className='fab fa-youtube fa-2x'></i>
           </a>
         )}
-        {social.instagram && (
+        {social && social.instagram && (
           <a
             href={`http://${social.instagram}`}
             target='_blank'
