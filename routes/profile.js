@@ -267,12 +267,12 @@ router.get('/github/:username', async (req, res) => {
   try {
     const response = await axios({
       method: 'get',
-      url: `https://api.github.com/users/${
+      url: encodeURI(`https://api.github.com/users/${
         req.params.username
       }/repos?per_page=5&sort=created:asc
       &clien_id=${config.get('githubClientId')}&client_secret=${config.get(
         'githubClientSecret'
-      )}`,
+      )}`),
       headers: { 'user-agent': 'node.js' },
     });
 
